@@ -1,0 +1,2 @@
+# JIM
+Java Inventory Management
