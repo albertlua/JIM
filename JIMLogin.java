@@ -1,18 +1,17 @@
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.Font;
-import javax.swing.SwingConstants;
-import java.awt.Toolkit;
-import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.JPasswordField;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 /**
  * JIMLogin.java
  * 
@@ -24,7 +23,7 @@ import java.awt.Color;
  * @author Filip Graniczny
  */
 public class JIMLogin {
-
+	
 	private JFrame frmJimJava;
 	private JTextField usernameField;
 	private JPasswordField passwordField;
@@ -59,67 +58,65 @@ public class JIMLogin {
 	 */
 	private void initialize() {
 		frmJimJava = new JFrame();
-		frmJimJava.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\bhlua_000\\Google Drive\\2016-2017 Sophomore\\AP Computer Science\\Java Final Project\\eclipse\\JIM\\src\\jim.png"));
+		frmJimJava.setIconImage(Toolkit.getDefaultToolkit().getImage(JIMLogin.class.getResource("/img/jim.png")));
 		frmJimJava.setResizable(false);
-		frmJimJava.setBounds(100, 100, 350, 200);
-		frmJimJava.setFont(new Font("Ubuntu Light", Font.PLAIN, 12));
+		frmJimJava.setBounds(100, 100, 350, 235);
 		frmJimJava.setTitle("JIM - Java Inventory Management");
 		frmJimJava.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmJimJava.getContentPane().setLayout(null);
 		frmJimJava.setLocationRelativeTo(null);
 		
 		JLabel lblJimJava = new JLabel("By Albert Lua, Filip Graniczny");
-		lblJimJava.setBounds(10, 155, 200, 15);
+		lblJimJava.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblJimJava.setBounds(10, 181, 200, 15);
 		lblJimJava.setHorizontalAlignment(SwingConstants.LEFT);
-		lblJimJava.setFont(new Font("Ubuntu", Font.BOLD, 12));
 		frmJimJava.getContentPane().add(lblJimJava);
 		
 		JLabel lblUsername = new JLabel("Username:");
-		lblUsername.setFont(new Font("Ubuntu Light", Font.PLAIN, 11));
-		lblUsername.setBounds(10, 36, 90, 14);
+		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblUsername.setBounds(10, 38, 90, 14);
 		frmJimJava.getContentPane().add(lblUsername);
 		
 		JLabel lblPassword = new JLabel("Password:");
-		lblPassword.setFont(new Font("Ubuntu Light", Font.PLAIN, 11));
-		lblPassword.setBounds(10, 56, 90, 14);
+		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblPassword.setBounds(10, 66, 90, 14);
 		frmJimJava.getContentPane().add(lblPassword);
 		
 		JLabel lblDatabaseName = new JLabel("Database Name:");
-		lblDatabaseName.setFont(new Font("Ubuntu Light", Font.PLAIN, 11));
-		lblDatabaseName.setBounds(10, 76, 90, 14);
+		lblDatabaseName.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblDatabaseName.setBounds(10, 94, 90, 14);
 		frmJimJava.getContentPane().add(lblDatabaseName);
 		
 		JLabel lblAddress = new JLabel("Address:");
-		lblAddress.setFont(new Font("Ubuntu Light", Font.PLAIN, 11));
-		lblAddress.setBounds(10, 96, 90, 14);
+		lblAddress.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblAddress.setBounds(10, 122, 90, 14);
 		frmJimJava.getContentPane().add(lblAddress);
 		
 		JLabel lblPleaseEnterYour = new JLabel("Please enter your database credentials below:");
-		lblPleaseEnterYour.setFont(new Font("Ubuntu Light", Font.PLAIN, 11));
-		lblPleaseEnterYour.setBounds(10, 11, 249, 14);
+		lblPleaseEnterYour.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		lblPleaseEnterYour.setBounds(10, 11, 324, 14);
 		frmJimJava.getContentPane().add(lblPleaseEnterYour);
 		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnLogin.setBackground(new Color(204, 153, 255));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				login();
 			}
 		});
-		btnLogin.setFont(new Font("Ubuntu", Font.PLAIN, 11));
-		btnLogin.setBounds(10, 121, 324, 23);
+		btnLogin.setBounds(10, 147, 324, 23);
 		frmJimJava.getContentPane().add(btnLogin);
 		
 		JLabel lblVAlpha = new JLabel(JIMMain.getVERSION());
-		lblVAlpha.setFont(new Font("Ubuntu Light", Font.PLAIN, 8));
+		lblVAlpha.setFont(new Font("Tahoma", Font.PLAIN, 8));
 		lblVAlpha.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblVAlpha.setBounds(220, 156, 114, 14);
+		lblVAlpha.setBounds(220, 182, 114, 14);
 		frmJimJava.getContentPane().add(lblVAlpha);
 		
 		usernameField = new JTextField();
 		usernameField.setToolTipText("Username for the MySQL user.");
-		usernameField.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		usernameField.setBounds(110, 35, 224, 15);
+		usernameField.setBounds(110, 35, 224, 20);
 		frmJimJava.getContentPane().add(usernameField);
 		usernameField.setColumns(10);
 		usernameField.addActionListener(new ActionListener() {
@@ -129,9 +126,9 @@ public class JIMLogin {
 		});
 		
 		passwordField = new JPasswordField();
+		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		passwordField.setToolTipText("Password for the MySQL user.");
-		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		passwordField.setBounds(110, 53, 224, 15);
+		passwordField.setBounds(110, 63, 224, 20);
 		frmJimJava.getContentPane().add(passwordField);
 		passwordField.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -140,9 +137,9 @@ public class JIMLogin {
 		});
 		
 		databaseField = new JTextField();
+		databaseField.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		databaseField.setToolTipText("Name of the database in MySQL.");
-		databaseField.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		databaseField.setBounds(110, 73, 224, 15);
+		databaseField.setBounds(110, 91, 224, 20);
 		frmJimJava.getContentPane().add(databaseField);
 		databaseField.setColumns(10);
 		databaseField.addActionListener(new ActionListener() {
@@ -152,9 +149,9 @@ public class JIMLogin {
 		});
 		
 		addressField = new JTextField();
+		addressField.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		addressField.setToolTipText("Address of the MySQL database.");
-		addressField.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		addressField.setBounds(110, 93, 224, 15);
+		addressField.setBounds(110, 119, 224, 20);
 		frmJimJava.getContentPane().add(addressField);
 		addressField.setColumns(10);
 		addressField.addActionListener(new ActionListener() {

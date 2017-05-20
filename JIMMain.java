@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Point;
@@ -39,7 +40,7 @@ public class JIMMain {
 	
 	private JFrame frmJimJava;
 	
-	private static String VERSION = "v1.0 BETA";
+	private static String VERSION = "v1.1 BETA";
 	private JScrollPane scrollPane;
 	private JTable table;
 	private JButton btnReloadData;
@@ -93,18 +94,18 @@ public class JIMMain {
 	@SuppressWarnings("serial")
 	private void initialize() {
 		frmJimJava = new JFrame();
-		frmJimJava.setFont(new Font("Ubuntu Light", Font.PLAIN, 12));
 		frmJimJava.setTitle("JIM - Java Inventory Management");
-		frmJimJava.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\bhlua_000\\Google Drive\\2016-2017 Sophomore\\AP Computer Science\\Java Final Project\\eclipse\\JIM\\src\\jim.png"));
+		frmJimJava.setIconImage(Toolkit.getDefaultToolkit().getImage(JIMMain.class.getResource("/img/jim.png")));
 		frmJimJava.setBounds(100, 100, 690, 420);
 		frmJimJava.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmJimJava.setLocationRelativeTo(null);
+		frmJimJava.setMinimumSize(new Dimension(400, 200));
 		
 		scrollPane = new JScrollPane();
 		
 		btnReloadData = new JButton("Reload Data");
+		btnReloadData.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnReloadData.setBackground(new Color(204, 153, 255));
-		btnReloadData.setFont(new Font("Ubuntu", Font.PLAIN, 11));
 		btnReloadData.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				getData(db);
@@ -112,22 +113,22 @@ public class JIMMain {
 		});
 		
 		lblNewLabel = new JLabel(VERSION);
-		lblNewLabel.setFont(new Font("Ubuntu", Font.PLAIN, 11));
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		
 		lblDoubleClick = new JLabel("* double click on entry to view item");
-		lblDoubleClick.setFont(new Font("Ubuntu", Font.PLAIN, 11));
+		lblDoubleClick.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		
 		btnNewItem = new JButton("New Item");
+		btnNewItem.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnNewItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JIMNew.main(null, db);
 			}
 		});
-		btnNewItem.setFont(new Font("Ubuntu", Font.PLAIN, 11));
 		btnNewItem.setBackground(new Color(204, 153, 255));
 		
 		lblDataRefreshesEvery = new JLabel("Data refreshes every 5 seconds.");
-		lblDataRefreshesEvery.setFont(new Font("Ubuntu", Font.PLAIN, 10));
+		lblDataRefreshesEvery.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		GroupLayout groupLayout = new GroupLayout(frmJimJava.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -169,7 +170,7 @@ public class JIMMain {
 				return false;  
 			}
 		};
-		table.setFont(new Font("Ubuntu Mono", Font.PLAIN, 11));
+		table.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		table.setFillsViewportHeight(true);
 		scrollPane.setViewportView(table);
 		frmJimJava.getContentPane().setLayout(groupLayout);

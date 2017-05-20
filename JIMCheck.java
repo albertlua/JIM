@@ -64,7 +64,7 @@ public class JIMCheck {
 	private void initialize() {
 		frmReturn = new JFrame();
 		frmReturn.setResizable(false);
-		frmReturn.setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\bhlua_000\\Google Drive\\2016-2017 Sophomore\\AP Computer Science\\Java Final Project\\eclipse\\JIM\\src\\jim.png"));
+		frmReturn.setIconImage(Toolkit.getDefaultToolkit().getImage(JIMCheck.class.getResource("/img/jim.png")));
 		frmReturn.setFont(new Font("Ubuntu", Font.PLAIN, 12));
 		frmReturn.setType(Type.UTILITY);
 		if (checked) {
@@ -77,12 +77,12 @@ public class JIMCheck {
 		frmReturn.getContentPane().setLayout(null);
 		
 		JLabel lblCheckNumber = new JLabel("Check Number:");
-		lblCheckNumber.setFont(new Font("Ubuntu", Font.PLAIN, 11));
+		lblCheckNumber.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblCheckNumber.setBounds(10, 11, 86, 14);
 		frmReturn.getContentPane().add(lblCheckNumber);
 		
 		textField = new JTextField();
-		textField.setFont(new Font("Ubuntu", Font.PLAIN, 11));
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		textField.setBounds(106, 8, 278, 20);
 		frmReturn.getContentPane().add(textField);
 		textField.setColumns(10);
@@ -100,7 +100,7 @@ public class JIMCheck {
 		});
 		
 		label = new JLabel();
-		label.setFont(new Font("Ubuntu", Font.PLAIN, 11));
+		label.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		label.setText("<dynamic>");
 		if (checked) {
 			label.setText("ENTER the check number you received when checking out.");
@@ -111,7 +111,7 @@ public class JIMCheck {
 		frmReturn.getContentPane().add(label);
 		
 		button = new JButton("<dynamic>");
-		button.setFont(new Font("Ubuntu", Font.PLAIN, 11));
+		button.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		button.setBackground(new Color(204, 153, 255));
 		if (checked) {
 			button.setText("Return Item");
